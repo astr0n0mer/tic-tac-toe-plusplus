@@ -1,0 +1,108 @@
+:root {
+  --dark-grey: #2c2c2c;
+  --medium-grey: #4b4b4b;
+  --primary-font-color: whitesmoke;
+  --primary-shadow-color: rgb(17, 17, 17);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* width: 100%; */
+  height: 100vh;
+  /* overflow: hidden; */
+  background-color: var(--dark-grey);
+  color: var(--primary-font-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#logo {
+  width: 20%;
+  border-radius: 2%;
+  box-shadow: 1px 1px 4px var(--primary-shadow-color);
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-details {
+  padding-bottom: 1em;
+  border: 0;
+}
+
+.player-details:last-of-type {
+  padding-bottom: 2em;
+}
+
+.player-id {
+  width: 100%;
+  display: block;
+  font-size: 1.8em;
+  padding-bottom: 0.4em;
+}
+
+.player-id::before {
+  content: "Player ";
+}
+
+.input-name,
+.input-symbol {
+  font-size: 1.5em;
+  background-color: var(--medium-grey);
+  color: var(--primary-font-color);
+  border: 0;
+  border-radius: 0.2em;
+  padding: 0.2em;
+  box-shadow: 1px 1px 2px black;
+}
+
+.input-name {
+  margin-right: 1em;
+}
+
+.start-game {
+  padding: 0.2em;
+  background-color: var(--medium-grey);
+  border: 0;
+  border-radius: 0.4em;
+  font-size: 2em;
+  letter-spacing: 0.05em;
+  color: var(--primary-font-color);
+  box-shadow: 2px 2px 2px black;
+}
+
+.start-game:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0.5px 0.5px 1px black;
+}
+
+#board-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#board {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  background-color: red;
+}
