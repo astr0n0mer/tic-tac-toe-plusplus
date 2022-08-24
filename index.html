@@ -19,7 +19,7 @@
                 <label class="player-id" for="name-player1">1</label>
                 <input class="input-name" type="text" name="name-player1" id="name-player1" placeholder="Name">
                 <select class="input-symbol" name="symbol-player1" id="symbol-player1">
-                    <option>❌</option>
+                    <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                 </select>
             </fieldset>
 
@@ -27,7 +27,7 @@
                 <label class="player-id" for="name-player2">2</label>
                 <input class="input-name" type="text" name="name-player2" id="name-player2" placeholder="Name">
                 <select class="input-symbol" name="symbol-player2" id="symbol-player2">
-                    <option>⭕</option>
+                    <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                 </select>
             </fieldset>
 
@@ -36,32 +36,23 @@
                 <label class="player-id" for="name-player2">3</label>
                 <input class="input-name" type="text" name="name-player2" id="name-player2" placeholder="Name">
                 <select class="input-symbol" name="symbol-player2" id="symbol-player2">
-                    <option value=""></option>
+                    <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                 </select>
             </fieldset>
             <fieldset class="player-details">
                 <label class="player-id" for="name-player2">4</label>
                 <input class="input-name" type="text" name="name-player2" id="name-player2" placeholder="Name">
                 <select class="input-symbol" name="symbol-player2" id="symbol-player2">
-                    <option value=""></option>
+                    <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                 </select>
             </fieldset>
 
-            <!-- <input class="start-game" type="button" value="Add player"> -->
-            <input class="start-game" type="button" value="START">
+            <input id="start-game" type="button" value="START">
         </form>
     </main>
     <section id="board-container">
-        <span id="board">
-            <span class="board-row">
-                <button>test</button>
-                <button>test</button>
-            </span>
-            <span class="board-row">
-                <button>test</button>
-                <button>test</button>
-            </span>
-        </span>
+        <span id="board"></span>
+        <input id="main-menu" type="button" value="Main Menu">
     </section>
     <script src="./app.js"></script>
 </body>

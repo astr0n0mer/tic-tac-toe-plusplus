@@ -3,6 +3,7 @@
   --medium-grey: #4b4b4b;
   --primary-font-color: whitesmoke;
   --primary-shadow-color: rgb(17, 17, 17);
+  --board-line-width: 0.1em;
 }
 
 * {
@@ -12,9 +13,7 @@
 }
 
 body {
-  /* width: 100%; */
-  height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
   background-color: var(--dark-grey);
   color: var(--primary-font-color);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -22,7 +21,7 @@ body {
 }
 
 main {
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -75,8 +74,9 @@ main {
   margin-right: 1em;
 }
 
-.start-game {
-  padding: 0.2em;
+#start-game,
+#main-menu {
+  padding: 0.2em 0.3em;
   background-color: var(--medium-grey);
   border: 0;
   border-radius: 0.4em;
@@ -86,7 +86,8 @@ main {
   box-shadow: 2px 2px 2px black;
 }
 
-.start-game:active {
+#start-game:active,
+#main-menu:active {
   transform: translate(2px, 2px);
   box-shadow: 0.5px 0.5px 1px black;
 }
@@ -94,15 +95,29 @@ main {
 #board-container {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 #board {
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  background-color: red;
+  background-color: var(--medium-grey);
+}
+
+.board-row {
+  padding-bottom: var(--board-line-width);
+  display: flex;
+  gap: var(--board-line-width);
+}
+
+.board-row:last-of-type {
+  padding: 0;
+}
+
+.board-row button {
+  width: 5em;
+  height: 5em;
+  border: 0;
+  background-color: var(--dark-grey);
 }
