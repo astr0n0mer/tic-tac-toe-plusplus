@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="prototype"
         content="https://www.figma.com/file/BAIxtPAnwnsC8YIH1Gp2M4/GitHub-projects'-prototypes?node-id=2%3A2">
+    <link rel="icon" href="./assets/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     <title>Tic Tac Toe++</title>
 </head>
@@ -14,45 +15,33 @@
 <body>
     <main>
         <img id="logo" src="./assets/logo.svg" alt="Tic Tac Toe++ logo" draggable="false">
-        <form id="form">
+        <form id="input-form">
             <fieldset class="player-details">
-                <label class="player-id" for="name-player1">1</label>
-                <input class="input-name" type="text" name="name-player1" id="name-player1" placeholder="Name">
-                <select class="input-symbol" name="symbol-player1" id="symbol-player1">
+                <input class="name-input" type="text" id="name-player1" placeholder="Player 1">
+                <select class="symbol-input">
                     <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                 </select>
             </fieldset>
 
             <fieldset class="player-details">
-                <label class="player-id" for="name-player2">2</label>
-                <input class="input-name" type="text" name="name-player2" id="name-player2" placeholder="Name">
-                <select class="input-symbol" name="symbol-player2" id="symbol-player2">
+                <input class="name-input" type="text" id="name-player2" placeholder="Player 2">
+                <select class="symbol-input">
                     <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                 </select>
             </fieldset>
-
-
-            <fieldset class="player-details">
-                <label class="player-id" for="name-player2">3</label>
-                <input class="input-name" type="text" name="name-player2" id="name-player2" placeholder="Name">
-                <select class="input-symbol" name="symbol-player2" id="symbol-player2">
-                    <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                </select>
-            </fieldset>
-            <fieldset class="player-details">
-                <label class="player-id" for="name-player2">4</label>
-                <input class="input-name" type="text" name="name-player2" id="name-player2" placeholder="Name">
-                <select class="input-symbol" name="symbol-player2" id="symbol-player2">
-                    <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                </select>
-            </fieldset>
-
+            <div id="user-options">
+                <input id="add-player" type="button" value="Add Player">
+                <input id="remove-player" type="button" value="Remove Player">
+            </div>
             <input id="start-game" type="button" value="START">
         </form>
     </main>
     <section id="board-container">
         <span id="board"></span>
-        <input id="main-menu" type="button" value="Main Menu">
+        <section id="menu-container">
+            <input id="restart-game" type="button" value="&#8635;">
+            <input id="main-menu" type="button" value="Main Menu">
+        </section>
     </section>
     <script src="./app.js"></script>
 </body>
