@@ -1,18 +1,22 @@
 let symbols = [
   "❌",
   "⭕",
-  "⚡",
   "🔥",
+  "💧",
+  "⚡",
+  "❄️",
+  "🌈",
   "🍀",
   "🍁",
   "⚔️",
   "🛡️",
   "🎯",
-  "📎",
   "💪",
   "🦾",
+  "☢️",
   "☠️",
   "👻",
+  "🎃",
   "👽",
 ];
 let symbolDropdowns = document.getElementsByClassName("symbol-input");
@@ -56,6 +60,11 @@ function disableCell(cell) {
 function disableBoard() {
   let boardCells = document.getElementsByClassName("board-cell");
   for (let cell of boardCells) disableCell(cell);
+}
+
+function updateGameStatus(status) {
+  let gamestatus = document.getElementById("game-status");
+  gamestatus.innerText = status;
 }
 
 function countSymbols(cell, direction) {
@@ -120,7 +129,9 @@ function createBoard(playerCount) {
         disableCell(button);
         if (isGameFinished(button)) {
           disableBoard();
-          console.log(symbols[playerSymbols[currentPlayerIndex]] + " wins.");
+          updateGameStatus(
+            symbols[playerSymbols[currentPlayerIndex]] + " wins"
+          );
         } else
           currentPlayerIndex = (currentPlayerIndex + 1) % playerSymbols.length;
       };
@@ -133,7 +144,8 @@ function createBoard(playerCount) {
 let addPlayerButton = document.getElementById("add-player");
 addPlayerButton.onclick = () => {
   if (symbolDropdowns.length < 8) {
-    let inputForm = document.getElementById("input-form");
+    // if (true) {
+    let userInputs = document.getElementById("user-inputs");
 
     let playerDetails = document.createElement("fieldset");
     playerDetails.classList.add("player-details");
@@ -147,21 +159,17 @@ addPlayerButton.onclick = () => {
     symbolInput.classList.add("symbol-input");
 
     playerDetails.append(nameInput, symbolInput);
-    inputForm.insertBefore(
-      playerDetails,
-      inputForm.children[symbolDropdowns.length]
-    );
+    userInputs.append(playerDetails);
     loadSymbols();
-    console.log(symbolDropdowns.length);
   }
 };
 
 let removePlayerButton = document.getElementById("remove-player");
 removePlayerButton.onclick = () => {
   if (symbolDropdowns.length > 2) {
-    let inputForm = document.getElementById("input-form");
-    inputForm.removeChild(inputForm.children[symbolDropdowns.length - 1]);
-    symbolDropdowns = document.getElementsByClassName("symbol-input");
+    let userInputs = document.getElementById("user-inputs");
+    userInputs.removeChild(userInputs.children[symbolDropdowns.length - 1]);
+    loadSymbols();
   }
 };
 
@@ -202,6 +210,7 @@ let restartButton = document.getElementById("restart-game");
 restartButton.onclick = () => {
   // let symbolDropdowns = document.getElementsByClassName("symbol-input");
   createBoard(symbolDropdowns.length);
+  updateGameStatus("");
   currentPlayerIndex = 0;
 };
 

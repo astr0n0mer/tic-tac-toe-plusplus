@@ -16,29 +16,33 @@
     <main>
         <img id="logo" src="./assets/logo.svg" alt="Tic Tac Toe++ logo" draggable="false">
         <form id="input-form">
-            <fieldset class="player-details">
-                <input class="name-input" type="text" id="name-player1" placeholder="Player 1">
-                <select class="symbol-input">
-                    <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                </select>
-            </fieldset>
+            <div id="user-inputs">
+                <fieldset class="player-details">
+                    <input class="name-input" type="text" id="name-player1" placeholder="Player 1">
+                    <select class="symbol-input">
+                        <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                    </select>
+                </fieldset>
 
-            <fieldset class="player-details">
-                <input class="name-input" type="text" id="name-player2" placeholder="Player 2">
-                <select class="symbol-input">
-                    <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                </select>
-            </fieldset>
+                <fieldset class="player-details">
+                    <input class="name-input" type="text" id="name-player2" placeholder="Player 2">
+                    <select class="symbol-input">
+                        <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                    </select>
+                </fieldset>
+            </div>
             <div id="user-options">
                 <input id="add-player" type="button" value="Add Player">
                 <input id="remove-player" type="button" value="Remove Player">
+                <input id="start-game" type="button" value="START">
             </div>
-            <input id="start-game" type="button" value="START">
+            <!-- <input id="start-game" type="button" value="START"> -->
         </form>
     </main>
     <section id="board-container">
         <span id="board"></span>
         <section id="menu-container">
+            <div id="game-status"></div>
             <input id="restart-game" type="button" value="&#8635;">
             <input id="main-menu" type="button" value="Main Menu">
         </section>
