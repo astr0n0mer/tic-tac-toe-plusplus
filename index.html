@@ -1,53 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="prototype"
-        content="https://www.figma.com/file/BAIxtPAnwnsC8YIH1Gp2M4/GitHub-projects'-prototypes?node-id=2%3A2">
-    <link rel="icon" href="./assets/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="prototype"
+      content="https://www.figma.com/file/BAIxtPAnwnsC8YIH1Gp2M4/GitHub-projects'-prototypes?node-id=2%3A2"
+    />
+    <link rel="icon" href="./assets/logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Tic Tac Toe++</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <img id="logo" src="./assets/logo.svg" alt="Tic Tac Toe++ logo" draggable="false">
-        <form id="input-form">
-            <div id="user-inputs">
-                <fieldset class="player-details">
-                    <input class="name-input" type="text" id="name-player1" placeholder="Player 1">
-                    <select class="symbol-input">
-                        <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                    </select>
-                </fieldset>
+      <img
+        id="logo"
+        src="./assets/logo.svg"
+        alt="Tic Tac Toe++ logo"
+        draggable="false"
+      />
+      <div id="input-form">
+        <div id="game-mode-menu">
+          <p>Mode</p>
+          <fieldset id="game-mode-options">
+            <input type="button" value="Standard" class="mode-selected" />
+            <input type="button" value="Stack" />
+            <input type="button" value="Square" />
+          </fieldset>
+        </div>
 
-                <fieldset class="player-details">
-                    <input class="name-input" type="text" id="name-player2" placeholder="Player 2">
-                    <select class="symbol-input">
-                        <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                    </select>
-                </fieldset>
-            </div>
-            <div id="user-options">
-                <input id="add-player" type="button" value="Add Player">
-                <input id="remove-player" type="button" value="Remove Player">
-                <input id="start-game" type="button" value="START">
-            </div>
-            <!-- <input id="start-game" type="button" value="START"> -->
-        </form>
+        <div id="players-menu">
+          <p>Players</p>
+          <fieldset class="player-details">
+            <input
+              type="text"
+              class="name-input"
+              id="name-player1"
+              placeholder="Player 1"
+            />
+            <select class="symbol-input">
+              <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="player-details">
+            <input
+              type="text"
+              class="name-input"
+              id="name-player2"
+              placeholder="Player 2"
+            />
+            <select class="symbol-input">
+              <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select>
+          </fieldset>
+        </div>
+
+        <div id="buttons">
+          <input id="add-player" type="button" value="&plus;" />
+          <input id="remove-player" type="button" value="&minus;" />
+          <input id="start-game" type="button" value="START" />
+        </div>
+        <!-- <input id="start-game" type="button" value="START"> -->
+      </div>
     </main>
     <section id="board-container">
-        <span id="board"></span>
-        <section id="menu-container">
-            <div id="game-status"></div>
-            <input id="restart-game" type="button" value="&#8635;">
-            <input id="main-menu" type="button" value="Main Menu">
-        </section>
+      <span id="board"></span>
+      <section id="menu-container">
+        <div id="game-status"></div>
+        <input id="restart-game" type="button" value="&#8635;" />
+        <input id="main-menu" type="button" value="Main Menu" />
+      </section>
     </section>
     <script src="./app.js"></script>
-</body>
-
+  </body>
 </html>
