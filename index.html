@@ -10,35 +10,38 @@
     />
     <link rel="icon" href="./assets/logo.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Tic Tac Toe++</title>
+    <title>Tic Tac Toe ++</title>
   </head>
 
   <body>
-    <main>
+    <main id="main-menu-page">
       <img
-        id="logo"
+        id="game-logo"
         src="./assets/logo.svg"
-        alt="Tic Tac Toe++ logo"
+        alt="Tic Tac Toe ++ logo"
         draggable="false"
       />
-      <div id="input-form">
+      <div id="main-menu-container">
+        <p class="menu-title">Mode</p>
         <div id="game-mode-menu">
-          <p>Mode</p>
+          <!-- <p class="menu-title">Mode</p> -->
           <fieldset id="game-mode-options">
-            <input type="button" value="Standard" class="mode-selected" />
+            <input type="button" value="Standard" id="mode-selected" />
             <input type="button" value="Stack" />
             <input type="button" value="Square" />
           </fieldset>
         </div>
 
+        <p class="menu-title">Players</p>
         <div id="players-menu">
-          <p>Players</p>
+          <!-- <p class="menu-title">Players</p> -->
           <fieldset class="player-details">
             <input
               type="text"
               class="name-input"
               id="name-player1"
-              placeholder="Player 1"
+              value="Player 1"
+              onfocus="this.select()"
             />
             <select class="symbol-input">
               <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
@@ -50,15 +53,62 @@
               type="text"
               class="name-input"
               id="name-player2"
+              value="Player 2"
+              onfocus="this.select()"
+            />
+            <select class="symbol-input">
+              <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select>
+          </fieldset>
+
+          <!-- delete below fieldset later 
+          <fieldset class="player-details">
+            <input
+              type="text"
+              class="name-input"
+              id="name-player2"
               placeholder="Player 2"
             />
             <select class="symbol-input">
               <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
             </select>
           </fieldset>
+          <fieldset class="player-details">
+            <input
+              type="text"
+              class="name-input"
+              id="name-player2"
+              placeholder="Player 2"
+            />
+            <select class="symbol-input">
+              <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select>
+          </fieldset>
+          <fieldset class="player-details">
+            <input
+              type="text"
+              class="name-input"
+              id="name-player2"
+              placeholder="Player 2"
+            />
+            <select class="symbol-input">
+              <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select>
+          </fieldset>
+          <fieldset class="player-details">
+            <input
+              type="text"
+              class="name-input"
+              id="name-player2"
+              placeholder="Player 2"
+            />
+            <select class="symbol-input">
+              <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            </select>
+          </fieldset> -->
         </div>
 
-        <div id="buttons">
+        <div id="action-buttons">
           <input id="add-player" type="button" value="&plus;" />
           <input id="remove-player" type="button" value="&minus;" />
           <input id="start-game" type="button" value="START" />
@@ -67,12 +117,35 @@
       </div>
     </main>
     <section id="board-container">
-      <span id="board"></span>
-      <section id="menu-container">
-        <div id="game-status"></div>
-        <input id="restart-game" type="button" value="&#8635;" />
-        <input id="main-menu" type="button" value="Main Menu" />
+      <section id="game-status-container">
+        <div id="game-status">
+          <!-- <p>Current player</p> -->
+          <!-- <div id="current-player">
+            <span class="player-name">Player 1</span>
+            <span class="weight-0">❌</span>
+            <span class="pieces-left">x14</span>
+            <span class="weight-1 selected-weight">❌</span>
+            <span class="pieces-left">x2</span>
+            <span class="weight-2">❌</span>
+            <span class="pieces-left">x2</span>
+          </div>
+          <p>Next player</p>
+          <div id="next-player">
+            <span class="player-name">Player 2</span>
+            <span class="weight-0">⭕</span>
+            <span class="pieces-left">x14</span>
+            <span class="weight-1">⭕</span>
+            <span class="pieces-left">x2</span>
+            <span class="weight-2">⭕</span>
+            <span class="pieces-left">x2</span>
+          </div> -->
+        </div>
+        <div id="game-page-buttons">
+          <input id="restart-game" type="button" value="Restart &#8635;" />
+          <input id="main-menu" type="button" value="Main Menu" />
+        </div>
       </section>
+      <span id="board"></span>
     </section>
     <script src="./app.js"></script>
   </body>
